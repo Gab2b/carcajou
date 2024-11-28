@@ -1,3 +1,10 @@
+<br>
+<div class="mb-3 d-flex justify-content-start">
+    <a class="btn btn-secondary" href="index.php?component=users"><- Retour</a>
+</div>
+<div class="mb-3 d-flex justify-content-center">
+    <h1>Modification de l'utilisateur à l'ID [<?php echo $user['id']?>]</h1>
+</div>
 <div class="container">
         <?php if(!empty($errors)): ?>
             <?php  foreach ($errors as $error): ?>

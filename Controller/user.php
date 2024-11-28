@@ -4,6 +4,10 @@ require "Model/user.php";
 
 $user = getUser($pdo, $_GET['id']);
 
+if (isset($_POST['back-button'])) {
+    header('Location: ?component=users');
+}
+
 if (isset($_POST['edit-button'])) {
     $username = validation($_POST['username']);
     $password = validation($_POST['username']);
