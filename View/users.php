@@ -26,11 +26,11 @@
                 </a>
             </td>
             <td>
-            <a href="index.php?component=users&action=delete_user&id=<?php echo $user['id']; ?>">
+            <a href="index.php?component=users&action=delete_user&id=<?php echo $user['id']; ?>" style="text-decoration: none">
                 <i class="fa-solid fa-trash-can" style="color : #ef2813;"></i>
             </a>
             <a href="index.php?component=user&action=edit&id=<?php echo $user['id']; ?>">
-                <i class="fa-solid fa-pen-to-square"></i>
+                <i class="fa-solid fa-pen-to-square ms-3"></i>
             </a>
             </td>
         </tr>
