@@ -1,3 +1,4 @@
+<br>
 <h1>Liste des utilisateurs</h1>
 <br>
 <table class="table">
@@ -24,7 +25,17 @@
                     ></i>
                 </a>
             </td>
+            <td>
+            <a href="index.php?component=users&action=delete_user&id=<?php echo $user['id']; ?>">
+                <i class="fa-solid fa-trash-can" style="color : #ef2813;"></i>
+            </a>
+            <a href="index.php?component=user&action=edit&id=<?php echo $user['id']; ?>">
+                <i class="fa-solid fa-pen-to-square"></i>
+            </a>
+            </td>
         </tr>
+        
+        
     <?php endforeach; ?>
 
   </tbody>
