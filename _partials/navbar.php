@@ -14,7 +14,8 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+          <i class="fa-solid fa-user"></i>
+          <?php echo $_SESSION['user_username']?>
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -23,12 +24,17 @@
             <li><a class="dropdown-item" href="index.php?logout=true">Déconnexion</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" role="search" method="post" action="index.php?component=users">
+        <input 
+            class="form-control me-2" 
+            type="search" 
+            placeholder="Search" 
+            aria-label="Search" 
+            name="search" 
+            action="index.php?component=users"
+            value="<?php echo isset($_POST['search']) ? $_POST['search'] : ''; ?>"
+            >
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>

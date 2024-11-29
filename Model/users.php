@@ -1,10 +1,25 @@
 <?php
 
-function getAll(PDO $pdo): array
+function getAll(PDO $pdo, string $search = null, string $sortby = null, string $sens = null): array
 {
-    $users = $pdo->prepare('SELECT * FROM users');
-    $users->execute();
-    return $users->fetchAll();
+    $query = "SELECT * FROM users";
+
+    if ($search !== null) {
+        $query .= ' WHERE id LIKE :search OR username LIKE :search OR email LIKE :search';
+    }
+
+    if ($sortby !== null) {
+        $query .= " ORDER BY $sortby $sens";
+    }
+
+    $res = $pdo->prepare($query);
+    
+    if ($search !== null) {
+        $res->bindValue(':search', "%$search%");
+    }
+
+    $res->execute();
+    return $res->fetchAll();
 }
 
 function toggleEnabled(PDO $pdo, int $id): void

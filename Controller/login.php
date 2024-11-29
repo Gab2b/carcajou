@@ -21,6 +21,10 @@ if (isset($_POST['login_button']))
         if ($isMatchPasscode && $user['enabled'])
         {
             $_SESSION['auth'] = true;
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_username'] = $user['username'];
+
+
             header('Location: ?component=users');
         }
         elseif(!$user['enabled'] && $isMatchPasscode)

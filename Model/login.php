@@ -2,7 +2,7 @@
 
 function getUser(PDO $pdo, string $username): array | bool
 {
-    $query = "SELECT username, password, enabled FROM users WHERE username = :username";
+    $query = "SELECT * FROM users WHERE username = :username";
     
     $user = $pdo->prepare($query);
     $user->bindParam(':username', $username);
