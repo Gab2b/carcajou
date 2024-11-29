@@ -29,7 +29,6 @@
                 <label class="form-check-label" for="enabled">Actif</label>
             </div>
             <div class="mb-3 d-flex justify-content-end">
-                <button type="submit" class="btn btn-primary" name="edit-button">Enregistrer</button>
-            </div>
+                <button type="submit" class="btn <?php echo isset($_GET['id']) ? 'btn-success' : 'btn-primary'?>" name="<?php echo (isset($_GET['action']) && ($_GET['action'] === "edit")) ? 'edit-button' : 'valid_button'; ?>"><?php echo isset($_GET['id']) ? 'Enregistrer' : 'Créer'; ?></button>            </div>
         </form>
     </div>

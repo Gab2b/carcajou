@@ -1,6 +1,10 @@
 <br>
 <h1>Liste des utilisateurs</h1>
 <br>
+<div class="mb-3">
+    <a class="btn btn-primary" href="index.php?component=user&action=create">+ Nouvel utilisateur</a>
+</div>
+<br>
 <table class="table">
   <thead>
     <tr>
